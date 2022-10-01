@@ -1,0 +1,7 @@
+base_url: "localhost:8080"
+get_api: "/albums/:id"
+post_api: "/albums"
+resolution: 7
+db_url: "localhost:6379"
+db_password: ""
+db: 0

@@ -1,0 +1,17 @@
+mode: set
+training/internal/pkg/service/service.go:33.24,36.16 3 1
+training/internal/pkg/service/service.go:39.2,40.16 2 1
+training/internal/pkg/service/service.go:43.2,44.12 2 1
+training/internal/pkg/service/service.go:36.16,38.3 1 0
+training/internal/pkg/service/service.go:40.16,42.3 1 0
+training/internal/pkg/service/service.go:47.35,52.2 4 1
+training/internal/pkg/service/service.go:54.48,60.2 5 1
+training/internal/pkg/service/service.go:62.49,67.46 4 1
+training/internal/pkg/service/service.go:71.2,73.16 3 1
+training/internal/pkg/service/service.go:76.2,77.16 2 1
+training/internal/pkg/service/service.go:80.2,85.16 5 1
+training/internal/pkg/service/service.go:88.2,89.41 2 1
+training/internal/pkg/service/service.go:67.46,69.3 1 0
+training/internal/pkg/service/service.go:73.16,75.3 1 0
+training/internal/pkg/service/service.go:77.16,79.3 1 0
+training/internal/pkg/service/service.go:85.16,87.3 1 0
