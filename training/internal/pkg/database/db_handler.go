@@ -3,7 +3,6 @@ package database
 import (
 	"github.com/go-redis/redis"
 	"log"
-	"strings"
 	"training/internal/pkg/config"
 )
 
@@ -27,25 +26,17 @@ func NewDatabase(conf *config.Base) (*Database, error) {
 }
 
 func (db *Database) Add(key string, value []string) error {
-	for _, word := range value {
-		val, err := db.Client.GetRange(key, 0, -1).Result()
-		if val == "" {
-			err = db.Client.Append(key, word).Err()
-		} else {
-			err = db.Client.Append(key, ","+word).Err()
-		}
-		if err != nil {
-			return err
-		}
+	err := db.Client.SAdd(key, value).Err()
+	if err != nil {
+		return err
 	}
 	return nil
 }
 
 func (db *Database) Get(key string) []string {
-	val, err := db.Client.GetRange(key, 0, -1).Result()
+	val, err := db.Client.SMembers(key).Result()
 	if err != nil {
-		log.Print("LRANGE FAILED.", err)
+		log.Print("SMembers FAILED.", err)
 	}
-	ValArray := strings.Split(val, ",")
-	return ValArray
+	return val
 }

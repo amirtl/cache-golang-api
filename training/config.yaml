@@ -1,6 +1,6 @@
 base_url: "localhost:8080"
-get_api: "/albums/:id"
-post_api: "/albums"
+get_api: "/search/:id"
+post_api: "/search"
 resolution: 7
 db_url: "localhost:6379"
 db_password: ""

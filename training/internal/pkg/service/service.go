@@ -12,7 +12,7 @@ import (
 )
 
 const (
-	configYamlFile string = "../../config.yaml"
+	configYamlFile string = "config.yaml"
 )
 
 type Arg struct {
