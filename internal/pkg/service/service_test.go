@@ -34,7 +34,6 @@ func TestLoadConfig(t *testing.T) {
 
 func TestEngine(t *testing.T) {
 	arg := service.LoadConfig()
-	arg.DB.Client.FlushDB()
 	engine := service.Engine(arg)
 	recorder := httptest.NewRecorder()
 	request, err := http.NewRequest("GET", "", nil)
@@ -57,6 +56,7 @@ func TestPostAlbums(t *testing.T) {
 		expected, _ := json.MarshalIndent(row.expected, "", "    ")
 		assert.Equal(t, string(expected), recorder.Body.String(), "bad response: %v", recorder.Body.String())
 	}
+	arg.DB.Client.FlushDB()
 }
 func TestGetAlbums(t *testing.T) {
 	arg := service.LoadConfig()
@@ -77,4 +77,5 @@ func TestGetAlbums(t *testing.T) {
 		expected, _ := json.MarshalIndent(row.expected, "", "    ")
 		assert.Equal(t, string(expected), recorder.Body.String(), "bad response: %v", recorder.Body.String())
 	}
+	arg.DB.Client.FlushDB()
 }

@@ -33,6 +33,7 @@ func TestAdd(t *testing.T) {
 		err := arg.DB.Add(data.key, data.value)
 		assert.Equal(t, nil, err, "Failed to add to database!")
 	}
+	arg.DB.Client.FlushDB()
 }
 
 func TestGet(t *testing.T) {
@@ -48,4 +49,5 @@ func TestGet(t *testing.T) {
 		value := arg.DB.Get(data.key)
 		assert.Equal(t, data.value, value, "Failed to add to database!")
 	}
+	arg.DB.Client.FlushDB()
 }
