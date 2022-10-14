@@ -9,6 +9,5 @@ FROM debian:buster-slim
 
 EXPOSE 8080
 COPY --from=builder /app ./
-COPY config.yaml .
 
 ENTRYPOINT ["./app"]
