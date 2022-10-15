@@ -1,7 +1,7 @@
-base_url: "localhost:8080"
+base_url: "0.0.0.0:8080"
 get_api: "/search/:id"
 post_api: "/search"
 resolution: 7
-db_url: "127.0.0.1:6379"
-db_password: ""
+db_url: "redis-asalari.smapp-play-ground.svc:6379"
+db_password: "amir-password"
 db: 0
