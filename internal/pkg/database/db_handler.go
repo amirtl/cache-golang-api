@@ -12,9 +12,9 @@ type Database struct {
 
 func NewDatabase(conf *config.Base) (*Database, error) {
 	client := redis.NewClient(&redis.Options{
-		Addr:     conf.DataBaseUrl,
-		Password: conf.DataBasePassword,
-		DB:       conf.DB,
+		Addr: conf.DataBaseUrl,
+		//Password: conf.DataBasePassword,
+		//DB:       conf.DB,
 	})
 	err := client.Ping().Err()
 	if err != nil {
